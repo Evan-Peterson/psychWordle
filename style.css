@@ -1,0 +1,15 @@
+body {
+    background-color: #121213;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding-left: 16px;
+    border-style: dashed;
+    border-color: green;
+}
+
+h1 {
+    color: white;
+}

@@ -8,6 +8,7 @@ class Box {
         this.status = 0;
         this.guess = "";
         this.word = word;
+        this.temp = "";
     }
 
     display() {
@@ -27,12 +28,25 @@ class Box {
         rect(this.x, this.y, 60);
         fill('#FFFFFF');
         textSize(36);
-        text(this.guess, this.x + 19, this.y + 43);
+        if(this.guess !== "") {
+            text(this.guess, this.x + 19, this.y + 43);
+        } else {
+            text(this.temp, this.x + 19, this.y + 43);
+        }
+        
     };
 
 
     setStatus(newStatus) {
         this.status = newStatus;
+    };
+
+    setTemp(temp) {
+        this.temp = temp;
+    };
+
+    getTemp() {
+        return this.temp;
     };
 
     setGuess(newGuess) {

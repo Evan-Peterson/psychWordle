@@ -1,8 +1,10 @@
 
 let questions = ["this is a test question"];
-let answers = ["answer"];
+let answers = ["ANSWER"];
 let boxes = [];
 let currentGuess = 0;
+let letter = 0;
+let length = answers[0].length;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -45,5 +47,32 @@ function draw() {
 
 
 function keyPressed() {
-    console.log(key);
+    if(key === "Enter") {
+        for(var i = 0;i < boxes[currentGuess].length;i++) {
+            boxes[currentGuess][i].setGuess(boxes[currentGuess][i].getTemp());
+        }
+        currentGuess++;
+        letter = 0;
+    } else if (key === "Backspace") {
+
+        if(boxes[currentGuess][letter].getTemp() === "") {
+            if(letter - 1 >= 0) {
+                boxes[currentGuess][letter - 1].setTemp("");
+                letter--;
+            }
+             
+        } else {
+            boxes[currentGuess][letter].setTemp("");
+        }
+
+    } else {
+        if((letter < length) && ("abcdefghijklmnopqrstuvwxyz".includes(key))) {
+            boxes[currentGuess][letter].setTemp(key.toUpperCase());
+            if(letter + 1 < length) {
+                letter++;
+            }
+            
+        }
+        
+    }
 }

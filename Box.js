@@ -42,6 +42,10 @@ class Box {
         this.status = newStatus;
     };
 
+    getStatus() {
+        return this.status;
+    };
+
     setTemp(temp) {
         this.temp = temp;
     };

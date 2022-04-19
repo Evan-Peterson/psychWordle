@@ -28,6 +28,7 @@ class Box {
         rect(this.x, this.y, 60);
         fill('#FFFFFF');
         textSize(36);
+
         if(this.guess !== "") {
             text(this.guess, this.x + 19, this.y + 43);
         } else {

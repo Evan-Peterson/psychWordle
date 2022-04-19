@@ -1,5 +1,5 @@
 
-let questions = ["this is a test question"];
+let questions = ["How long can i make this question and the centering still work"];
 let answers = ["ANSWER"];
 let boxes = [];
 let currentGuess = 0;
@@ -19,14 +19,17 @@ function setup() {
         boxes[i] = [];
     }
 
+    fill('#FFFFFF');
+    textSize(42);
+    text(questions[0], windowWidth / 2  - (questions[0].length * 8), windowHeight / 6);
+
     let offset = (answers[0].length  / 2) * 60; 
     
     for(var k = 0;k < 5;k++) {
-        var y = (windowHeight / 6) + (60 * k) + (10 * k);
+        var y = (windowHeight / 4) + (60 * k) + (10 * k);
         for(var i = 0;i < answers[0].length;i++) {
             var x = (windowWidth / 2) + (60 * i) + (5 * i) - offset;
-    
-            
+
             boxes[k][i] = new Box(x, y, split[i], answers[0]);
         }
     }

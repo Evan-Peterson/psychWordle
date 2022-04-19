@@ -6,8 +6,8 @@ body {
     display: flex;
     justify-content: center;
     padding-left: 16px;
-    border-style: dashed;
-    border-color: green;
+    /* border-style: dashed;
+    border-color: green; */
 }
 
 h1 {

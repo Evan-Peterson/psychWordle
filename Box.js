@@ -8,7 +8,7 @@ class Box {
         // 0 default, 1 (full grey) not in word, 2 (full yellow) in word wrong place, 3 (full green) right letter right place
         this.status = 0;
         this.guess = "";
-        this.word = word;
+        this.word = word.toUpperCase();
         this.temp = "";
 
         if(this.answer === " ") {

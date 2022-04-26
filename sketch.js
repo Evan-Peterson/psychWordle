@@ -104,9 +104,11 @@ function keyPressed() {
             next = true;
         } else {
             let gameOver = true;
+            console.log(boxes[currentGuess]);
 
             for(var i = 0;i < boxes[currentGuess].length;i++) {
                 boxes[currentGuess][i].setGuess(boxes[currentGuess][i].getTemp());
+                
     
                 if(boxes[currentGuess][i].getStatus() != 3) {
                     gameOver = false;
@@ -192,6 +194,7 @@ function generate() {
     answers.splice(curQuestion, 1);
 
     curQuestion = getRandom(0, questions.length - 1);
+
     length = answers[curQuestion].length;
 
     let split = answers[curQuestion].split("");
@@ -223,7 +226,7 @@ function resetKeys() {
 
     let rows = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
     
-    let pos = [300, 270, 250];
+    let pos = [300, 290, 280];
 
     for(var j = 0;j < keys.length;j++) {
         let offset = (rows[j].length  / 2) * 40; 
